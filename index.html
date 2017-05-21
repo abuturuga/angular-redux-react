@@ -8,6 +8,8 @@
   <body ng-app="APP">
     <div class="container" ng-controller="PageController as $ctrl">
       {{$ctrl.dummy}}
+      <react-container></react-container>
+      <button ng-click="$ctrl.addOne()">Add One</button>
     </div>
 
     <script src="bundle.js"></script>

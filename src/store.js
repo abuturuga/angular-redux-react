@@ -4,10 +4,7 @@ import {
   createStore,
   compose} from 'redux';
 import thunk from 'redux-thunk';
-
-function dummyReducer(state = 0, action) {
-  return state;
-}
+import dummyReducer from './reducers/dummy-reducer';
 
 const reducers = combineReducers({
   dummy: dummyReducer

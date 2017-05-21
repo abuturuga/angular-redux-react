@@ -1,18 +1,20 @@
+import {addOne} from '../actions/dummy-actions';
+
 class PageController {
 
   constructor($scope, ngRedux) {
     this.$scope = $scope;
 
-    const disconect = ngRedux.connect(this.mapStateToProps, this);
+    const disconect = ngRedux.connect(this.mapStateToProps.bind(this), this);
     $scope.$on('destroy', disconect);
-    console.log(this);
   }
 
-  init() {
-    console.log('app is initialized');
+  addOne() {
+    this.dispatch(addOne());
   }
 
   mapStateToProps(state) {
+    this.$scope.$evalAsync();
     return {
       dummy: state.dummy
     };
