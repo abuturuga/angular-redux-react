@@ -14,15 +14,17 @@ export default function() {
     });
   };
 
-  this.$get = () => {
+  this.$get = ['$rootScope', ($rootScope) => {
     return {
       connect: (mapStateToProps, component) => {
         component.dispatch = _store.dispatch;
         bindProps(_store, mapStateToProps, component);
         return _store.subscribe(() => {
-          bindProps(_store, mapStateToProps, component);
+          $rootScope.$evalAsync(() => {
+            bindProps(_store, mapStateToProps, component);
+          });
         });
       }
     };
-  };
+  }];
 }

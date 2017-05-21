@@ -14,7 +14,6 @@ class PageController {
   }
 
   mapStateToProps(state) {
-    this.$scope.$evalAsync();
     return {
       dummy: state.dummy
     };
