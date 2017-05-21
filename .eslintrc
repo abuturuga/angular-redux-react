@@ -19,7 +19,7 @@
   "rules": {
     'array-bracket-spacing': ['error', 'never'],
     'arrow-spacing': 'warn',
-    'arrow-parens': 'error',
+    'arrow-parens': 'off',
     'block-spacing': ['error', 'always'],
     'brace-style': 'error',
     'comma-dangle': ['error', 'never'],

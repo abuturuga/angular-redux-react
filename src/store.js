@@ -5,8 +5,13 @@ import {
   compose} from 'redux';
 import thunk from 'redux-thunk';
 
+function dummyReducer(state = 0, action) {
+  return state;
+}
 
-const reducers = combineReducers({});
+const reducers = combineReducers({
+  dummy: dummyReducer
+});
 
 const middleware = compose(
   applyMiddleware(thunk),

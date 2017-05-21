@@ -1,17 +1,24 @@
 class PageController {
 
-  constructor($scope) {
+  constructor($scope, ngRedux) {
     this.$scope = $scope;
-    this.state = {
-      field: 1
-    };
+
+    const disconect = ngRedux.connect(this.mapStateToProps, this);
+    $scope.$on('destroy', disconect);
+    console.log(this);
   }
 
   init() {
     console.log('app is initialized');
   }
 
+  mapStateToProps(state) {
+    return {
+      dummy: state.dummy
+    };
+  }
+
 }
 
-PageController.$inject = ['$scope'];
+PageController.$inject = ['$scope', 'ngRedux'];
 export default PageController;
