@@ -2,6 +2,7 @@ if (module.hot) {
   module.hot.accept();
 }
 
+import './style.scss';
 import angular from 'angular';
 import 'babel-polyfill';
 import store from './store';
@@ -12,3 +13,4 @@ angular.module('APP', ['ng-redux', 'angular-container'])
   .config((ngReduxProvider) => {
     ngReduxProvider.setStore(store);
   });
+
