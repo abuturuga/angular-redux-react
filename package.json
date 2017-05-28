@@ -1,6 +1,7 @@
 {
   "name": "angular-redux-react",
   "scripts": {
+    "start": "node index.js",
     "build": "webpack --config=webpack.config.js",
     "dev-server": "webpack-dev-server --config=webpack.config.js --inline --progress --hot"
   },
@@ -13,11 +14,15 @@
     "babel-preset-stage-2": "^6.24.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-hot-middleware": "^2.18.0"
   },
   "dependencies": {
     "angular": "^1.6.4",
     "babel-polyfill": "^6.23.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
     "ng-redux": "^3.4.0-beta.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",

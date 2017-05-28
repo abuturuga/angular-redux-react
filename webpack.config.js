@@ -1,8 +1,16 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin'),
-      path = require('path');
+      path = require('path'),
+      webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+    './src/index.js'
+  ],
+  devServer: {
+    hot: true,
+    inline: true
+  },
   devtool: 'source-map',
   output: {
     path: `${__dirname}/static`,
@@ -25,6 +33,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('style.css'),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };

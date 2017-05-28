@@ -1,3 +1,7 @@
+if (module.hot) {
+  module.hot.accept();
+}
+
 import angular from 'angular';
 import 'babel-polyfill';
 import store from './store';
