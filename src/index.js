@@ -6,9 +6,9 @@ import angular from 'angular';
 import 'babel-polyfill';
 import store from './store';
 import './ng-redux/ng-redux';
-import './angular-container/container';
+import './angular-container/angular-container';
 
-angular.module('APP', ['ng-redux', 'page'])
+angular.module('APP', ['ng-redux', 'angular-container'])
   .config((ngReduxProvider) => {
     ngReduxProvider.setStore(store);
   });
