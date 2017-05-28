@@ -1,4 +1,5 @@
-import {addOne} from '../actions/dummy-actions';
+import {addOne, removeOne} from '../actions/dummy-actions';
+import {fetchOne} from '../actions/fetch-actions';
 
 
 class Controller {
@@ -17,9 +18,18 @@ class Controller {
     this.dispatch(addOne());
   }
 
+  removeOne() {
+    this.dispatch(removeOne());
+  }
+
+  fetchOne() {
+    this.dispatch(fetchOne());
+  }
+
   mapStateToProps(state) {
     return {
-      dummy: state.dummy
+      dummy: state.dummy,
+      fetch: state.fetch
     };
   }
 

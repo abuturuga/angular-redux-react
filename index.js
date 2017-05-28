@@ -41,6 +41,9 @@ app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/index.html`);
 });
 
+app.get('/api/dummy', (req, res) => {
+  res.send({work: Math.random()});
+});
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);

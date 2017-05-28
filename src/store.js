@@ -5,9 +5,12 @@ import {
   compose} from 'redux';
 import thunk from 'redux-thunk';
 import dummyReducer from './reducers/dummy-reducer';
+import fetchReducer from './reducers/fetch-reducer';
+
 
 const reducers = combineReducers({
-  dummy: dummyReducer
+  dummy: dummyReducer,
+  fetch: fetchReducer
 });
 
 const middleware = compose(

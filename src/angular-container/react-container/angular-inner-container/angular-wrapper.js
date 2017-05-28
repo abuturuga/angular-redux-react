@@ -1,5 +1,7 @@
 import React from 'react';
-import './angular-inner-contriner';
+import ReactDOM from 'react-dom';
+import angular from 'angular';
+import './angular-inner-container';
 
 
 class AngularWrapper extends React.Component {
@@ -8,9 +10,24 @@ class AngularWrapper extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    //const element = ReactDOM.findDOMNode(this).querySelector('.angular-wrapper');
+    //angular.bootstrap(element, ['angular-inner']);
+  }
+
+  createMarkup() {
+    return {__html: `
+      <div class="angular-wrapper" data-$injector="">
+        <angular-inner></angular-inner>
+      </div>`
+    };
+  }
+
   render() {
     return (
-      <div></div>
+      <div>
+        <div dangerouslySetInnerHTML={this.createMarkup()}></div>
+      </div>
     );
   }
 

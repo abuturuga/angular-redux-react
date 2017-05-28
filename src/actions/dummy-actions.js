@@ -1,4 +1,5 @@
-const ADD_ONE = 'ADD_ONE';
+const ADD_ONE = 'ADD_ONE',
+      REMOVE_ONE = 'REMOVE_ONE';
 
 const addOne = () => {
   return {
@@ -6,7 +7,16 @@ const addOne = () => {
   };
 };
 
+const removeOne = () => {
+  return {
+    type: REMOVE_ONE
+  };
+};
+
+
 export {
   ADD_ONE,
-  addOne
+  REMOVE_ONE,
+  addOne,
+  removeOne
 };

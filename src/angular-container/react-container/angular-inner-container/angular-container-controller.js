@@ -2,7 +2,7 @@ class Controller {
 
   constructor($scope) {
     this.$scope = $scope;
-    console.log('Angular Continaer');
+    console.log('Angular Container');
   }
 
 }
