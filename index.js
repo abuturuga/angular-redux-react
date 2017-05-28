@@ -13,7 +13,7 @@ if(isDev) {
         webpackHotMiddleware = require('webpack-hot-middleware'),
         compiler = webpack(config),
         middleware = webpackMiddleware(compiler, {
-          publicpath: config.output.path,
+          publicpath: config.output.publicPath,
           contentBase: 'src',
           stats: {
             colors: true,
