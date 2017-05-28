@@ -3,7 +3,7 @@
   "scripts": {
     "start": "node index.js",
     "build": "webpack --config=webpack.config.js",
-    "dev-server": "webpack-dev-server --config=webpack.config.js --inline --progress --hot"
+    "dev-server": "webpack-dev-server --config=webpack.config.js"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
