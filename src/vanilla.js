@@ -18,7 +18,7 @@ class Vanilla {
       let value = props[key];
 
       if(key === 'fetch') {
-        value = JSON.stringify(value, value);
+        value = JSON.stringify(value, null, ' ');
       }
       element.innerHTML = value;
     });
@@ -69,9 +69,15 @@ Vanilla.template = `
 <div class="vanila-container">
   <h1 class="title">Vanila Container</h1>
   <div class="container-header">
-    <div class="state-value">
-      <span class="dummy"></span>
-      <pre class="fetch"></pre>
+    <div class="state-values">
+      <div class="state-value">
+        <span class="label">dummy</span>
+        <span class="dummy"></span>
+      </div>
+      <div class="state-value">
+        <span class="label">fetch</span>
+        <pre class="fetch"></pre>
+      </div>
     </div>
     <button class="btn add-btn" >Add one</button>
     <button class="btn remove-btn">Remove one</button>

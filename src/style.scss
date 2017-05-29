@@ -2,22 +2,84 @@ html,
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background: #ecf0f1;
 }
 
 * {
   box-sizing: border-box;
 }
 
+.container {
+  padding: 40px;
+}
+
 .angular-container,
 .react-container,
 .vanila-container {
-  border: 1px solid black;
   padding: 10px;
   margin-top: 10px;
+  background: white;
+  border-radius: 4px;
 
   .title {
     margin: 0;
     line-height: 1;
     font-size: 24px;
+    font-weight: 500;
+  }
+
+  pre {
+    background: #272822;
+    padding: 8px;
+    color: white;
+    margin: 0;
+  }
+
+  .state-values {
+    margin-top: 16px;
+    .state-value {
+      border: 1px solid #2c3e50;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .label {
+      font-weight: bold;
+      margin-right: 16px;
+    }
+  }
+
+  .btn {
+    margin-left: 8px;
+  }
+}
+
+.vanila-container {
+  margin-top: 40px;
+}
+
+.react-container {
+  background: #ecf0f1;
+
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #27ae60;
+  border-bottom: 6px solid #2ecc71;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-size: 12px;
+  &:hover {
+    background: #2ecc71;
+    border-color:  #27ae60;
   }
 }
