@@ -14,9 +14,32 @@ const fetchOne = () => {
   };
 };
 
+const startFetch = () => {
+  return {
+    type: DUMMY_FETCH_START
+  }
+};
+
+const endFetch = (payload) => {
+  return {
+    type: DUMMY_FETCH_END,
+    payload
+  }
+};
+
+const errorFetch = () => {
+  return {
+    type: DUMMY_FETCH_ERROR
+  }
+};
+
+
 export {
   DUMMY_FETCH_START,
   DUMMY_FETCH_END,
   DUMMY_FETCH_ERROR,
+  startFetch,
+  endFetch,
+  errorFetch,
   fetchOne
 };

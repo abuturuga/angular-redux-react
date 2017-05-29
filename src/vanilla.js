@@ -1,5 +1,10 @@
 import {addOne, removeOne} from './actions/dummy-actions';
-import {fetchOne} from './actions/fetch-actions';
+import {
+  fetchOne,
+  startFetch,
+  endFetch,
+  errorFetch} from './actions/fetch-actions';
+import externalService from './external-service';
 
 
 class Vanilla {
@@ -9,6 +14,7 @@ class Vanilla {
     this.addOne = this.addOne.bind(this);
     this.removeOne = this.removeOne.bind(this);
     this.fetchOne = this.fetchOne.bind(this);
+    this.fetchFromService = this.fetchFromService.bind(this);
   }
 
   setProps(props) {
@@ -40,6 +46,17 @@ class Vanilla {
     this.store.dispatch(fetchOne());
   }
 
+  fetchFromService(event) {
+    this.store.dispatch(startFetch());
+    externalService()
+      .then(data => {
+        this.store.dispatch(endFetch(data));
+      })
+      .catch(error => {
+        this.store.dispatch(errorFetch(error));
+      });
+  }
+
   bindEvents() {
     this.setProps(this.store.getState());
     this.unsubscribe = this.store.subscribe(() => {
@@ -49,6 +66,7 @@ class Vanilla {
     this.element.querySelector('.add-btn').addEventListener('click', this.addOne);
     this.element.querySelector('.remove-btn').addEventListener('click', this.removeOne);
     this.element.querySelector('.fetch-btn').addEventListener('click', this.fetchOne);
+    this.element.querySelector('.fetch-service').addEventListener('click', this.fetchFromService);
   }
 
   render(selector) {
@@ -82,6 +100,7 @@ Vanilla.template = `
     <button class="btn add-btn" >Add one</button>
     <button class="btn remove-btn">Remove one</button>
     <button class="btn fetch-btn">Fetch one</button>
+    <button class="btn fetch-service">Fetch from service</button>
   </div>
 </div>`;
 
